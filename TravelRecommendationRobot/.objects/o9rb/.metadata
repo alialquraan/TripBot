@@ -1,0 +1,12 @@
+﻿{
+  "Id": "o9rb1Rk3gUq9J6do2SqsXg",
+  "Reference": "zvDLkfmKnkW6khp1sq9DTg/o9rb1Rk3gUq9J6do2SqsXg",
+  "Name": "Edge: Booking.com | Official site | The best hotels, flights, car rentals & accommodations",
+  "Type": "App",
+  "Created": "2023-07-31T20:18:37.2810277Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=23.6.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-31T20:18:37.2810277Z"
+}

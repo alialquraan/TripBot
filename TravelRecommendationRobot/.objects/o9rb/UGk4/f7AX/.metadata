@@ -1,0 +1,13 @@
+﻿{
+  "Id": "f7AXYNo3o0yr3seqTcF-lA",
+  "Reference": "zvDLkfmKnkW6khp1sq9DTg/f7AXYNo3o0yr3seqTcF-lA",
+  "ParentRef": "zvDLkfmKnkW6khp1sq9DTg/UGk4WVSPOkWdU7iyEAJckQ",
+  "Name": "Edge: Booking.com | Official site | The best hotels, flights, car rentals & accommodations",
+  "Type": "Screen",
+  "Created": "2023-07-31T20:18:37.3442172Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=23.6.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-31T20:18:37.3442172Z"
+}

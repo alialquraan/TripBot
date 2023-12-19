@@ -1,0 +1,14 @@
+﻿{
+  "Id": "eXwikQF9UUilM7EuVOCM5Q",
+  "Reference": "zvDLkfmKnkW6khp1sq9DTg/eXwikQF9UUilM7EuVOCM5Q",
+  "ParentRef": "zvDLkfmKnkW6khp1sq9DTg/f7AXYNo3o0yr3seqTcF-lA",
+  "Name": "JOD 236",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2023-07-31T20:18:37.4555385Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=23.6.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-31T20:18:37.4555385Z"
+}

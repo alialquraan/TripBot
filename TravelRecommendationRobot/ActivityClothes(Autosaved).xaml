@@ -1,0 +1,1650 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:swf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="nameCountry" Type="InArgument(x:String)" />
+    <x:Property Name="locationCity" Type="InArgument(x:String)" />
+    <x:Property Name="cheap" Type="InArgument(x:Double)" />
+    <x:Property Name="CheapPrizeSite" Type="InArgument(x:String)" />
+    <x:Property Name="checkInDate" Type="InArgument(x:String)" />
+    <x:Property Name="checkOutDate" Type="InArgument(x:String)" />
+    <x:Property Name="NAdults" Type="InArgument(x:String)" />
+    <x:Property Name="staysUserSelected" Type="InArgument(x:String)" />
+    <x:Property Name="listCountainAllAges" Type="InArgument(scg:List(x:String))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1665,6578</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Windows.Forms.Layout</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPathTeam.EmailToPdf</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities.Business.ForEachMail</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Primitives</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>EmailToPdf</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>GlobalVariablesT1PNoYwrqg</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1675,6513" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;Amman&quot;,&quot;loay&quot;,&quot;loljyf,jyfg,jygf,yjg,jygf,jyfj,fj,yf,jyf,yf,jyf,jfy,jf,jyfololo&quot;,&quot;alalalalal&quot;,&quot;asdasdaskukkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkloay&quot;}]" Name="inList" />
+      <Variable x:TypeArguments="swf:CheckedListBox" Name="Out_finalList" />
+      <Variable x:TypeArguments="s:String[]" Name="Sunny" />
+      <Variable x:TypeArguments="s:String[]" Name="Cloudy" />
+      <Variable x:TypeArguments="s:String[]" Name="Rain" />
+      <Variable x:TypeArguments="s:String[]" Name="Frost" />
+      <Variable x:TypeArguments="s:String[]" Name="Snow" />
+      <Variable x:TypeArguments="s:String[]" Name="Hot" />
+      <Variable x:TypeArguments="s:String[]" Name="Windy" />
+      <Variable x:TypeArguments="s:String[]" Name="Humidity" />
+      <Variable x:TypeArguments="s:String[]" Name="Mostlycloudy" />
+      <Variable x:TypeArguments="s:String[]" Name="Mostlysunny" />
+      <Variable x:TypeArguments="x:String" Name="filterWeather" />
+      <Variable x:TypeArguments="x:String" Name="strWeather" />
+      <Variable x:TypeArguments="x:String" Name="strTemp" />
+      <Variable x:TypeArguments="s:String[]" Name="conditionWeather" />
+      <Variable x:TypeArguments="x:String" Name="weatherClothes" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayOfClothesSelectedUser" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="listOfCheckedClothes" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="ActivityFromTripAdvisor" />
+      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="findChildren" />
+      <Variable x:TypeArguments="x:String" Name="Activity1" />
+      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="findChildrenTrip" />
+      <Variable x:TypeArguments="x:String" Name="ThinkTodoTrip" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="listOfCheckedActivity" />
+      <Variable x:TypeArguments="s:String[]" Name="ArrayOfActivitySelectedUser" />
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[new List(of String)]" Name="listOfCheckedActivity1" />
+      <Variable x:TypeArguments="x:Int32" Name="_out_ForEach_Generic_1_4__CurrentIndex" />
+      <Variable x:TypeArguments="scg:IList(x:String)" Default="[new list (of String)]" Name="listOfStays" />
+      <Variable x:TypeArguments="s:String[]" Name="arrayOfStaysSelected" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;petra&quot;,&quot;amman&quot;,&quot;DeadSea&quot;}]" Name="ListOfActivity" />
+      <Variable x:TypeArguments="x:Int32" Name="emptyCell" />
+      <Variable x:TypeArguments="x:String" Name="DateTime" />
+      <Variable x:TypeArguments="x:String" Name="TotalTask" />
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;shirt&quot;,&quot;short&quot;,&quot;vjssahv&quot;}]" Name="ListOfClothe" />
+      <Variable x:TypeArguments="x:String" Name="TicketDescription" />
+      <Variable x:TypeArguments="x:Int32" Name="numForThing" />
+      <Variable x:TypeArguments="x:String" Name="email" />
+      <Variable x:TypeArguments="x:String" Name="phoneNumber" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="clothesDt" />
+      <Variable x:TypeArguments="sd1:DataTable" Name="ActivityDt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Clothes" sap:VirtualizedContainerService.HintSize="1613,3149" sap2010:WorkflowViewState.IdRef="Sequence_67">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:String[]" Name="Clear" />
+        <Variable x:TypeArguments="s:String[]" Name="weatherDefault" />
+        <Variable x:TypeArguments="s:String[]" Name="Haze" />
+        <Variable x:TypeArguments="s:String[]" Name="chilly" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1551,504" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_50">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Sunny]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{"Light-colored clothes price=6","Shorts  price=4","tank top price=3","sunglasses price=3","hat price=4","Sundress price=5","sandals price=7","blouse price=8"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_51">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Cloudy]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"Jeans price=7", "sweater price=6","tunic price=5","scarf price=4","blazer price=10"," fleece jacket price=7"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_52">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Rain]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"poncho price=4", "jacket price=9","raincoat price=5"," umbrella price=6"," waterproof sneakers price=7","rain boots price=7","chinos price=5"," hood price=3"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_53">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Frost]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"parka price=6","tights price=","winter coat price=5","gloves price=3","hat price=2","Sweater price=4","Long johns price=6"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_54">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Snow]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{" jackets price=6","Waterproof Insulated Jackets and Pants price=16","Waterproof Hiking Boots price=15","Snow Helmet price=20","Ski Gloves price=6"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_55">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Hot]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"T-shirts price=6","Shorts price=5","Skirts price=4","Sundresses price=4","Loose-fitting pants price=8","Hats price=2","Sunglasses price=4"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_56">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Windy]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"Windproof jackets and pants price=15","Sweaters and fleece jackets price=4","Long-sleeved shirts and long pants price=3","Hats and scarves price=2","Gloves price=2"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_57">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Humidity]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"T-shirts price=6","Shorts price=5","Skirts price=4","Sundresses price=4","Loose-fitting pants price=8","Hats price=2","Sunglasses price=4"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_58">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Mostlycloudy]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"Jeans price=7", "sweater price=6","tunic price=5","scarf price=4","blazer price=10"," fleece jacket price=7"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_59">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Mostlysunny]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{"Light-colored clothes price=6","Shorts  price=4","tank top price=3","sunglasses price=3","hat price=4","Sundress price=5","sandals price=7","blouse price=8"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_60">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Clear]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{"Shorts price=4","Sundress price=5","blouse  price=8","T-shirt  price=5","shoes  price=5","sandals  price=7","wedges  price=4"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_61">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[weatherDefault]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{" Long pants price=10","jeans price=9"," sandals price=5","boots price=11","hats price=3","shirts price=8"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_62">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[Haze]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"mask price=1","blouse with a jacket price=7","Sundress with a jacket price=9","pants price=4","sunglasses price=2","hat price=3"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_63">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:String[]">[chilly]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:String[]">[{"fleece jacket price=3"," hat price=2", "scarf price=3","gloves price=2","winter coat price=3","parka price=5","Sweater price=4"}]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="1551,944" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" IsCVEnabled="False" OpenMode="Always" ScopeGuid="750f90b8-118d-4034-8d85-74e83475d9f0" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,727" sap2010:WorkflowViewState.IdRef="Sequence_68">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'combo box'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="HardwareEvents" ScopeIdentifier="750f90b8-118d-4034-8d85-74e83475d9f0" Text="[&quot;what is the temperature in &quot;+nameCountry + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="402, 456, 561, 44" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'combo box'" FullSelectorArgument="&lt;ctrl name='New Tab' role='document' /&gt;&lt;ctrl name='Search Google or type a URL' role='combo box' /&gt;" FuzzySelectorArgument="&lt;ctrl name='New Tab' role='document' /&gt;&lt;ctrl name='Search Google or type a URL' role='combo box' automationid='' /&gt;" Guid="f1aec691-a705-4878-a370-57664e909715" InformativeScreenshot="b3c1fe0b6cbb5796e0089af8efcfc6a1.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NGetText DisplayName="Get Text '22'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="750f90b8-118d-4034-8d85-74e83475d9f0" TextString="[strTemp]" Version="V3">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=what+is+the+temperature+in+amman&amp;rlz=1C1YTUH_enJO1057JO1057&amp;oq=what+is+the+temperature+&amp;gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCjE0Mjk4ajBqMTWoAgCwAgA&amp;sourceid=chrome&amp;ie=UTF-8" DesignTimeRectangle="258, 326, 51, 60" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'22'" FullSelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wob_tm' tag='SPAN' type='' class='wob_t q8U8x' /&gt;" Guid="f0ffffb5-5a84-4846-a22b-72e048bf3e82" InformativeScreenshot="86a2ee38fc5b69a7918318eb5af2e8ce.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='what is the temperature in amman - Google Search' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="188, 328, 60, 60" ElementType="Icon" FriendlyName="'IMG wob_tci'" FullSelectorArgument="&lt;webctrl id='wob_tci' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wob_tci' tag='IMG' type='' class='wob_tci' aaname='Haze' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+              <uix:NGetText DisplayName="Get Text 'Weather'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="750f90b8-118d-4034-8d85-74e83475d9f0" TextString="[strWeather]" Version="V3">
+                <uix:NGetText.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=what+is+the+temperature+in+amman&amp;rlz=1C1YTUH_enJO1057JO1057&amp;oq=what+is+the+temperature+&amp;gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCjE0Mjk4ajBqMTWoAgCwAgA&amp;sourceid=chrome&amp;ie=UTF-8" DesignTimeRectangle="514, 374, 326, 20" DesignTimeScaleFactor="1" FriendlyName="'Haze'" FullSelectorArgument="&lt;webctrl id='wob_dcp' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wob_dcp' tag='DIV' type='' class='wob_dcp' aaname='' /&gt;" Guid="c95178c3-86b5-4fa7-af04-d48a379821c9" InformativeScreenshot="637025818f5ba6041736ea1442e0d56e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='what is the temperature in amman - Google Search' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="514, 328, 326, 26" ElementType="Text" FriendlyName="'Weather'" FullSelectorArgument="&lt;webctrl id='wob_loc' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wob_loc' tag='DIV' type='' class='wob_loc q8U8x' aaname='Weather' check:innerText='Weather' /&gt;" SearchSteps="FuzzySelector" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NGetText.Target>
+              </uix:NGetText>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="2607da4678aae01bc329faf4b95ffcbb.png" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;" Title="New Tab" Url="chrome://newtab/" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <Assign sap:VirtualizedContainerService.HintSize="1551,82" sap2010:WorkflowViewState.IdRef="Assign_29">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[filterWeather]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[strWeather.Replace(" ","")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Flowchart sap:VirtualizedContainerService.HintSize="1551,1388" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">70,0</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <x:Double x:Key="Width">1517</x:Double>
+            <x:Double x:Key="Height">1351</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">100,75 100,84</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Flowchart.StartNode>
+          <x:Reference>__ReferenceID20</x:Reference>
+        </Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,439</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,480.5 1150,480.5 1150,624</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_39">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Mostlysunny]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID0">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">1050,624</av:Point>
+                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">1150,676 1150,726</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim form As New System.Windows.Forms.Form()&#xA;Dim btnOK As New System.Windows.Forms.Button()&#xA;&#xA;checkedListBox1 = New System.Windows.Forms.CheckedListBox()&#xA;Dim chkBox1 As New System.Windows.Forms.CheckBox()&#xA;&#xA;btnOK.Location = New System.Drawing.Point(48, 350)&#xA;AddHandler btnOK.Click, Sub(sender As Object, e As EventArgs) form.Close()&#xA;btnOK.Name = &quot;btnOK&quot;&#xA;btnOK.Size = New System.Drawing.Size(111, 30)&#xA;btnOK.TabIndex = 2&#xA;btnOK.Width = 200&#xA;btnOK.Text = &quot;Accept&quot;&#xA;&#xA;checkedListBox1.FormattingEnabled = True&#xA;checkedListBox1.Location = New System.Drawing.Point(48, 65)&#xA;checkedListBox1.Name = &quot;chkSelectOptions&quot;&#xA;checkedListBox1.Items.AddRange(countries)&#xA;checkedListBox1.Size = New System.Drawing.Size(200, 300)&#xA;checkedListBox1.TabIndex = 1&#xA;checkedListBox1.AutoSize = True&#xA;checkedListBox1.IntegralHeight = False&#xA;checkedListBox1.Dock = Fill&#xA;&#xA;chkBox1.Text = &quot;What are your clothes choices?&quot;&#xA;chkBox1.TabIndex = 0&#xA;chkBox1.Location = New System.Drawing.Point(49, 40)&#xA;chkBox1.AutoSize = True&#xA;chkBox1.Checked = True&#xA;&#xA;form.BackColor = System.Drawing.SystemColors.Window&#xA;form.AcceptButton = btnOK&#xA;form.BackColor = System.Drawing.SystemColors.Window&#xA;form.Text = &quot;Select Activity&quot;&#xA;form.TopMost = True&#xA;form.AutoSize = True&#xA;form.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)&#xA;form.Font = New System.Drawing.Font(&quot;Times New Roman&quot;, 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)&#xA;form.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font&#xA;&#xA;form.Controls.Add(checkedListBox1)&#xA;form.Controls.Add(btnOK)&#xA;form.Controls.Add(chkBox1)&#xA;' Get the width and height of the form.&#xA;Dim formWidth As Integer = CInt(form.Width)&#xA;Dim formHeight As Integer = CInt(form.Height)&#xA;&#xA;' Get the width and height of the Accept button.&#xA;Dim buttonWidth As Integer = btnOK.Width&#xA;Dim buttonHeight As Integer = btnOK.Height&#xA;&#xA;' Calculate the center position of the Accept button.&#xA;Dim buttonX As Integer = CInt((formWidth - buttonWidth) / 2)&#xA;Dim buttonY As Integer = CInt(formHeight - buttonHeight / 2 - 20)&#xA;&#xA;' Set the location of the Accept button to the center position.&#xA;btnOK.Location = New System.Drawing.Point(buttonX, buttonY)&#xA;form.Name = &quot;Form1&quot;&#xA;form.ShowDialog()" DisplayName="ClothesForm" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+                <ui:InvokeCode.Arguments>
+                  <OutArgument x:TypeArguments="swf:CheckedListBox" x:Key="checkedListBox1">[Out_finalList]</OutArgument>
+                  <InArgument x:TypeArguments="sd:SizeF" x:Key="AutoScaleDimensions" />
+                  <InArgument x:TypeArguments="swf:AutoScaleMode" x:Key="AutoScaleMode" />
+                  <InArgument x:TypeArguments="sd:Size" x:Key="ClientSize" />
+                  <InArgument x:TypeArguments="swf:Control" x:Key="Controls" />
+                  <InArgument x:TypeArguments="s:String[]" x:Key="countries ">[conditionWeather]</InArgument>
+                  <InArgument x:TypeArguments="swf:DockStyle" x:Key="Fill" />
+                </ui:InvokeCode.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeCode>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">1050,726</av:Point>
+                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">1150,778 1150,808.0000000000001 1250,808.0000000000001 1250,809</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[Out_finalList.CheckedItems]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_5" ItemToAppend="[currentItem.ToString]" List="[listOfCheckedClothes]" />
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEach>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID18">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">1033,809</av:Point>
+                          <av:Size x:Key="ShapeSize">434,82</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">1250,891 1250,941</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_44">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:String[]">[ArrayOfClothesSelectedUser]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:String[]">[listOfCheckedClothes.ToArray]</InArgument>
+                        </Assign.Value>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Assign>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">1150,941</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;Your Choices is :&quot;+Environment.NewLine+String.Join(Environment.NewLine,ArrayOfClothesSelectedUser)]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:MessageBox>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,529</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,570.5 1150,570.5 1150,624</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_38">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Mostlycloudy]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,609</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,650.5 1050,650.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_37">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Humidity]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,689</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,730.5 817,730.5 817,650.5 1050,650.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_36">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Windy]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,769</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,810.5 817,810.5 817,650.5 1050,650.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_35">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Hot]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,849</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,890.5 817,890.5 817,650.5 1050,650.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_34">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Snow]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,929</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,970.5 817,970.5 817,650.5 1050,650.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_33">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Frost]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,359</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,400.5 1150,400.5 1150,624</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_32">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Rain]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,279</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,320.5 1150,320.5 1150,624</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_31">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[Sunny]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">353,199</av:Point>
+              <av:Size x:Key="ShapeSize">434,82</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">787,240.5 1150,240.5 1150,624</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_30">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[weatherDefault]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID0</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <FlowDecision x:Name="__ReferenceID11" Condition="[weatherClothes = &quot;Yes&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <av:Point x:Key="ShapeLocation">80.5,146.5</av:Point>
+              <av:Size x:Key="ShapeSize">79,87</av:Size>
+              <av:PointCollection x:Key="TrueConnector">80.5,190 72.5,190 72.5,606.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <FlowDecision.True>
+            <FlowSwitch x:TypeArguments="x:String" Default="{x:Reference __ReferenceID10}" x:Name="__ReferenceID12" DisplayName="Flow Switch" Expression="[filterWeather]" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">55,606.5</av:Point>
+                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                  <av:PointCollection x:Key="HumidityConnector">125,650 353,650</av:PointCollection>
+                  <av:PointCollection x:Key="MostlysunnyConnector">107.5,606.5 107.5,480 353,480</av:PointCollection>
+                  <av:PointCollection x:Key="MostlycloudyConnector">125,628.25 155,628.25 155,570 353,570</av:PointCollection>
+                  <av:PointCollection x:Key="WindyConnector">125,671.75 155,671.75 155,730 353,730</av:PointCollection>
+                  <av:PointCollection x:Key="HotConnector">107.5,693.5 107.5,810 353,810</av:PointCollection>
+                  <av:PointCollection x:Key="FrostConnector">72.5,693.5 72.5,970 353,970</av:PointCollection>
+                  <av:PointCollection x:Key="SnowConnector">90,693.5 90,890 353,890</av:PointCollection>
+                  <av:PointCollection x:Key="RainConnector">55,671.75 0,671.75 0,400 353,400</av:PointCollection>
+                  <av:PointCollection x:Key="Default">55,628.25 31,628.25 31,240 353,240</av:PointCollection>
+                  <av:PointCollection x:Key="SunnyConnector">55,650 16,650 16,320 353,320</av:PointCollection>
+                  <av:PointCollection x:Key="CloudyConnector">72.5,693.5 72.5,1050 353,1050</av:PointCollection>
+                  <av:PointCollection x:Key="ClearConnector">55,671.75 25,671.75 25,1130 353,1130</av:PointCollection>
+                  <av:PointCollection x:Key="HazeConnector">55,671.75 8,671.75 8,1210 353,1210</av:PointCollection>
+                  <av:PointCollection x:Key="chillyConnector">55,671.75 25,671.75 25,1290 353,1290</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <x:Reference>__ReferenceID1<x:Key>Sunny</x:Key></x:Reference>
+              <x:Reference>__ReferenceID2<x:Key>Rain</x:Key></x:Reference>
+              <x:Reference>__ReferenceID3<x:Key>Frost</x:Key></x:Reference>
+              <x:Reference>__ReferenceID4<x:Key>Snow</x:Key></x:Reference>
+              <x:Reference>__ReferenceID5<x:Key>Hot</x:Key></x:Reference>
+              <x:Reference>__ReferenceID6<x:Key>Windy</x:Key></x:Reference>
+              <x:Reference>__ReferenceID7<x:Key>Humidity</x:Key></x:Reference>
+              <x:Reference>__ReferenceID8<x:Key>Mostlycloudy</x:Key></x:Reference>
+              <x:Reference>__ReferenceID9<x:Key>Mostlysunny</x:Key></x:Reference>
+              <FlowStep x:Key="Cloudy" x:Name="__ReferenceID13" sap2010:WorkflowViewState.IdRef="FlowStep_13">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">353,1009</av:Point>
+                    <av:Size x:Key="ShapeSize">434,82</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">787,1050.5 817,1050.5 817,650.5 1050,650.5</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_40">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:String[]">[Cloudy]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <FlowStep.Next>
+                  <x:Reference>__ReferenceID0</x:Reference>
+                </FlowStep.Next>
+              </FlowStep>
+              <FlowStep x:Key="Clear" x:Name="__ReferenceID14" sap2010:WorkflowViewState.IdRef="FlowStep_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">353,1089</av:Point>
+                    <av:Size x:Key="ShapeSize">434,82</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">787,1130.5 817,1130.5 817,650.5 1050,650.5</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_41">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:String[]">[Clear]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <FlowStep.Next>
+                  <x:Reference>__ReferenceID0</x:Reference>
+                </FlowStep.Next>
+              </FlowStep>
+              <FlowStep x:Key="Haze" x:Name="__ReferenceID15" sap2010:WorkflowViewState.IdRef="FlowStep_15">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">353,1169</av:Point>
+                    <av:Size x:Key="ShapeSize">434,82</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">787,1210.5 817,1210.5 817,650.5 1050,650.5</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_42">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:String[]">[Haze]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <FlowStep.Next>
+                  <x:Reference>__ReferenceID0</x:Reference>
+                </FlowStep.Next>
+              </FlowStep>
+              <FlowStep x:Key="chilly" x:Name="__ReferenceID16" sap2010:WorkflowViewState.IdRef="FlowStep_16">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <av:Point x:Key="ShapeLocation">353,1249</av:Point>
+                    <av:Size x:Key="ShapeSize">434,82</av:Size>
+                    <av:PointCollection x:Key="ConnectorLocation">787,1290.5 817,1290.5 817,650.5 1050,650.5</av:PointCollection>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_43">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:String[]">[conditionWeather]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:String[]">[chilly]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <FlowStep.Next>
+                  <x:Reference>__ReferenceID0</x:Reference>
+                </FlowStep.Next>
+              </FlowStep>
+            </FlowSwitch>
+          </FlowDecision.True>
+        </FlowDecision>
+        <FlowStep x:Name="__ReferenceID20" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">0,84</av:Point>
+              <av:Size x:Key="ShapeSize">200,52</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">100,136 120,136 120,146.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" AutoCloseAfter="00:00:00" Buttons="YesNo" ChosenButton="[weatherClothes]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;The temperature in  &quot;+nameCountry+&quot; is &quot;+strTemp+Environment.NewLine+&quot;The weather in &quot;+nameCountry+&quot; is &quot; +filterWeather+Environment.NewLine+ &quot; Would you like some suggestions on what clothes to pack?&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:MessageBox>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID11</x:Reference>
+          </FlowStep.Next>
+        </FlowStep>
+        <x:Reference>__ReferenceID12</x:Reference>
+        <x:Reference>__ReferenceID13</x:Reference>
+        <x:Reference>__ReferenceID14</x:Reference>
+        <x:Reference>__ReferenceID15</x:Reference>
+        <x:Reference>__ReferenceID16</x:Reference>
+        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID17</x:Reference>
+        <x:Reference>__ReferenceID18</x:Reference>
+        <x:Reference>__ReferenceID19</x:Reference>
+      </Flowchart>
+    </Sequence>
+    <Sequence DisplayName="Activity" sap:VirtualizedContainerService.HintSize="1613,83" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Tripadvisor: Over a billion reviews &amp; contributions for Hotels, Attractions, Resta" sap:VirtualizedContainerService.HintSize="530,999" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="755831e7-ca63-4d19-8b28-32fa4098fa63" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,781" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="str_" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DIV'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="755831e7-ca63-4d19-8b28-32fa4098fa63" Text="[nameCountry]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.tripadvisor.com/" CvElementArea="264, 353, 650, 61" CvTextArea="313, 375, 249, 17" CvTextArgument="Places to go, things to do, hotels..." CvType="InputBox" DesignTimeRectangle="282, 412, 675, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div' parentid='lithium-root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='lithium-root' tag='DIV' class='F1 f u Q2' aaname='' /&gt;" Guid="38a6f1f1-a8eb-4c9e-832a-5bb7573ee052" ImageBase64="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" InformativeScreenshot="d2ad249d4b1801ff1a53075f845a818e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='k1697214655984xY4hgiVv' title='Tripadvisor: Over a billion reviews &amp;amp; contributions for Hotels, Attractions, Restaurants, and more' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'things to do'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="755831e7-ca63-4d19-8b28-32fa4098fa63" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.tripadvisor.com/" CvTextArgument="maldive things to do" CvType="Text" DesignTimeRectangle="398, 385, 90, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'things to do'" FullSelectorArgument="&lt;webctrl aaname=' things to do' parentid='typeahead_results' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' things to do' parentid='typeahead_results' tag='DIV' type='' class='biGQs _P fiohW avBIb rnrge S5' check:innerText='things to do' /&gt;" Guid="945d2bcf-25ce-4a41-a764-2e15948df88c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAUCAYAAAAEEYpkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARtSURBVFhH7VjLK3VRFD//gImZkaGBgYFEJCmhyGMiJopIDLyuhEghkZIZyUSIkjBSJiilpJS4RJ4pkrzfr/X1W9/Zx7nbPude+nz3fvfzqxNn7bXOWvu312Oj0Q+8gh/ivYQf4r2ETxH/+PhIZ2dn9Pr6qkvUuLm5oefnZ/3Nf3F9fc3PV/Ap4ufn5ykpKYlOT091yUdsbW1ReHg4tba26hL/RVNTEz9fgSXxg4ODVFRURHd3d7rEM+LPz8+ppaWFFhYWdIl3oIr/T8MrxL+9vdHV1ZXbtmMGdGEDWyvAnzuyPNFxRzxaobtYZCD+i4sLY89WxAtu7NqtpnKMj2maZjxiAyA+ISGBJiYmKCIigtdCQkJoamrK2AAOBYcDXUDY9PT0sC5sYCtXxPr6OmVmZho+c3NzaXp6mrKzs40KOzk5ofz8fF4PCAig+vp6nicyrOIHjo6OqLy8nO2xFhwcTF1dXbYH+fDwQH19fUb8wqa6utqFeFkPPvLy8ujg4EDXeIcmCDIDA6O3t5eNDg8P+ZRBLHTxMTi7vLzkYBFAfHw87e/vs62KeATR2NjINhjODoeDScbvwO7uLsXFxVFHRwfLMMQnJyd5A8nJyQbxmBs1NTXsFxlVUFDAmS3DKv7j42NKT0+nqqoqlj89PdHi4iIlJiZSW1ubMkMhwxp0oAsb2OIb2Jcg3k4PPuHbDK2iooI3KsOq1YSFhdHGxoYu+Z2FyGhBtIp42QbZDRsh6+zspNLSUs4YARA1MDDgMlNAPDYq9OxuFar4kY2FhYUfqsTpdFJUVBQtLS3pknesrq5yYkHHDCQRqlIQb6UHX/CJPZqhpaSkGJlnhrseLyATrSJetgHhyAz8xPfhR5W5OKCsrCzDFvoxMTEUGRlJ7e3t/K5qlYAc//39PZWUlFB/fz+/m2EXw8jICFfW7e2tLnkH2qcg3k5PxaXW3d2tzJq/RbwgBJuQgQxMS0tzsUVJr62tcVmHhobS0NCQknw5fjty7dZUPAjgEAXxdnqqNa22ttZj5e8gHoAvuQ+C4ObmZsMWJYu+jSoQGBsb+9RmVS0N2NnZ4RmjajWQYQ06ZsitxkoPvuDzQ6vBDUWFubk5io2NpZWVFZfh+h3Eg1RkPfRGR0f5NlNcXEzR0dGG7cvLCzU0NBASBZvBg01bzShV/Bh2mC0Y4iAOwGDPycnhgS8fCAAZ1qADXQC2uCwEBQUZxCNR6urqWG97e5v9YV/whQMRtgKa1T0cRpWVlXyLEZnzXcQD8Ifhl5GRwVfI8fFxmp2ddbHd29tzuXKmpqbS5uYmr8lQxQ/gaodMFd8IDAzkA8UtyQpYA6niCgobZDAqUBAPwAfkWBffR7zmKhXwiX+SgdDl5WXOajOQtfLwR6LgHY9V0ngCzDUcqKpNWQG6ntigAqEnKk0FnyAepOO2gvuvALIM7QZ/J1gF/y/DJ4gHscPDw9wz0ZfRh/HXYVlZGbcMf4RPEC+AoYWZMDMzw73YHzNdwKeI/39A9As82NXsU1UVzAAAAABJRU5ErkJggg==" InformativeScreenshot="9c6f47605b28fb7a3624d009eaca39de.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Tripadvisor: Over a billion reviews &amp;amp; contributions for Hotels, Attractions, Restaurants, and more' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CvType="Icon" DesignTimeRectangle="294, 380, 40, 40" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a&amp;gt;div' idx='3' parentid='typeahead_results' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='XYHql _u z RJdtB' parentid='typeahead_results' tag='DIV' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAODSURBVFhH5ZjLSitBEIbjykUWrry8h7pWJAHJNoILH0HElYL4Si5c6MKl6D74BvGSRUJE8YLirQ5f0xUnyUxPTW4ynA8KTE939U9PdVWNBckZ/5/g9/d3eXx8lGazKY1GQ25ubuT6+toZfzPGM+Ywd1gGEvz5+SkPDw9yd3cn9Xo9k7GGtfgYhEyCv7+/5f7+vksAJ8jYy8uLfHx8uDk/Pz/O+JsxnjGHudG1jDEnC2bBz8/P7hXrZu12W97e3vxTO6xhrfrBJ76tmARHT7XVarlTGxZ84Ev9soeFVMFcGHX69PTkR0cHPtU/e6URFKxib29vB3r9VvDNHhbRiYI1DHA0ihBIgz1UdCg8YgVzCViIjfNke2Ev3TfpIvYJJs1oNhhHzKahMY2GuJTXJ1hDgRv8V2j2iAuNLsFUHyZik4jbJNhbdfRWxC7BlEwmkdj/Gi0uaIrSJVh7g9BF293dlZWVlZEYvpLQC4imKB3BdFJMoN6HYKOZmZm+zbOa+gihvUe0y+sIpv3jYVqJ1A2HxeJHEwDalI5grWp0ViHYZHl52f+KZ3V11VkIfKQJRguaotWvI1iPPy077OzsSKFQkK2trcSGHCGlUsn/6ub19VU2NjZkamrK+Qqh2SIaph3BWiws/enFxYXMz8/L5uamH7FTrVZlYWFBLi8v/UgyaEET2pSOYD5peEjjbWF/f1+KxWLsl8Pp6amzXngj09PTcnh46EfCoAVNaFMGFnx0dORC4+rqyo/8Mjs766yXWq3m1hwfH/uRMEHBWUIC9vb23Gl9fX35kV9OTk7k7OzM//qFt8Gag4MDPxImGBLWSwfn5+cyNzcnlUrFj9hZX183x3Dw0lnT2vb2tnut5XK5rwopobRGz7u2tmbKEsG0lqVwLC0t+V/xhNKasri4mJqHg4UjS2lO28iCxY+GaWxpBkvzwyaT6CVSmx+wtJeT6tZM7WXuGnjQQM/FJxKQrLWI5OIjFHL1ma9oaOTiHymKVj8cjfOk8a1io1UtjqBgUNHYOGJaY9YiFlIFg4YHxg0eRYjgQ7MBFgqDKCbBwCXQ7IGR2AcJE9ZoUcDwmXTB4jALBtJM9LQx6j1jdFacGnNovDH+ZoxnzNHeQI2xuNQVIpNghepDydTeI4uxhrVxn1YWBhIchU6K9o8LwwnyivmkwfibMZ4xJ+krOwtDC540ORMs8g/0hYxtu0yuAgAAAABJRU5ErkJggg==" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="href" DelayBefore="3" DisplayName="Get Attribute 'Ways to tour Paris'" sap:VirtualizedContainerService.HintSize="388,209" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[ThinkTodoTrip]" ScopeIdentifier="755831e7-ca63-4d19-8b28-32fa4098fa63" Version="V3">
+                <uix:NGetAttributeGeneric.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.tripadvisor.com/Attractions-g187147-Activities-Paris_Ile_de_France.html" CvTextArea="94, 385, 229, 29" CvTextArgument="Ways to tour *" CvType="Text" DesignTimeRectangle="96, 385, 226, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Ways to tour Paris'" FullSelectorArgument="&lt;webctrl aaname='Ways to tour *' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Ways to tour *' tag='A' type='' class='BMQDV _F Gv wSSLS SwZTJ' check:innerText='Ways to tour *' /&gt;" Guid="8975f5ba-f0f9-45dd-b515-b44cf1c7fb72" InformativeScreenshot="9cdcc3bfc1def7353bd3167488088f6a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='THE 15 BEST Things to Do in Paris - 2023 (with Photos) - Tripadvisor' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                </uix:NGetAttributeGeneric.Target>
+              </uix:NGetAttributeGeneric>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Edge" IconBase64="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" InformativeScreenshot="c56bd8e6857d5dff3ddb923659cbdcf1.jpg" Selector="&lt;html app='msedge.exe' htmlwindowname='k1697214655984xY4hgiVv' title='Tripadvisor: Over a billion reviews &amp;amp; contributions for Hotels, Attractions, Restaurants, and more' /&gt;" Title="AMM to IST, 12/11 — 19/11" Url="https://www.tripadvisor.com/" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: THE 15 BEST Things to Do in Paris - 2023 (with Photos) - Tripadvisor" sap:VirtualizedContainerService.HintSize="530,1065" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="7a569261-d8ac-42f3-9dc7-f9bb30db65b8" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,847" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ActivityFromTripAdvisor]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Activity' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Prize' ReferenceName='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='NumberColumnFormat' DecimalSeparator='.' ThousandsSeparator=',' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Adult' ReferenceName='Column2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='header' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='article' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="10" ScopeIdentifier="7a569261-d8ac-42f3-9dc7-f9bb30db65b8" Version="V3">
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.tripadvisor.com/Attractions-g293953-Activities-c42-Maldives.html" DesignTimeRectangle="12, 500, 1303, 10563" DesignTimeScaleFactor="1" FriendlyName="'Enter datesFiltersTours…'" FullSelectorArgument="&lt;webctrl class='rdYON' parentid='lithium-root' tag='DIV' /&gt;" Guid="087979e2-c1cc-4472-8ed3-b1a8d7bf1e0d" InformativeScreenshot="8d3396ed8a335c9f31ab94f8f00a82d6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='THE 10 BEST Maldives Tours &amp;amp; Excursions for 2023 (with Prices)' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                </uix:NExtractData.Target>
+              </uix:NExtractData>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ActivityFromTripAdvisor]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="434,411" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd1:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd1:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,223" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,135" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[CurrentRow(&quot;Activity&quot;).ToString.Split(&quot;. &quot;)(1)+&quot; Price is $&quot;+CurrentRow(&quot;Prize&quot;).ToString+&quot; &quot;+CurrentRow(&quot;Adult&quot;).ToString]" List="[listOfCheckedActivity]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ForEachRow>
+              <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_14">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="s:String[]">[ArrayOfActivitySelectedUser]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:String[]">[listOfCheckedActivity.ToArray]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Edge" IconBase64="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" InformativeScreenshot="a4b7ed1b1eaff7da4e7acd0f03d4a3bc.jpg" Selector="&lt;html app='msedge.exe' title='THE 15 BEST Things to Do in Paris - 2023 (with Photos) - Tripadvisor' /&gt;" Title="THE 15 BEST Things to Do in Paris - 2023 (with Photos) - Tripadvisor" Url="[&quot;https://www.tripadvisor.com&quot;+ThinkTodoTrip]" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim form As New System.Windows.Forms.Form()&#xA;Dim btnOK As New System.Windows.Forms.Button()&#xA;&#xA;checkedListBox1 = New System.Windows.Forms.CheckedListBox()&#xA;Dim chkBox1 As New System.Windows.Forms.CheckBox()&#xA;&#xA;btnOK.Location = New System.Drawing.Point(48, 350)&#xA;AddHandler btnOK.Click, Sub(sender As Object, e As EventArgs) form.Close()&#xA;btnOK.Name = &quot;btnOK&quot;&#xA;btnOK.Size = New System.Drawing.Size(111, 30)&#xA;btnOK.TabIndex = 2&#xA;btnOK.Width = 200&#xA;btnOK.Text = &quot;Accept&quot;&#xA;&#xA;checkedListBox1.FormattingEnabled = True&#xA;checkedListBox1.Location = New System.Drawing.Point(48, 65)&#xA;checkedListBox1.Name = &quot;chkSelectOptions&quot;&#xA;checkedListBox1.Items.AddRange(countries)&#xA;checkedListBox1.Size = New System.Drawing.Size(200, 300)&#xA;checkedListBox1.TabIndex = 1&#xA;checkedListBox1.AutoSize = True&#xA;checkedListBox1.IntegralHeight = False&#xA;checkedListBox1.Dock = Fill&#xA;&#xA;chkBox1.Text = &quot;What are your clothes choices?&quot;&#xA;chkBox1.TabIndex = 0&#xA;chkBox1.Location = New System.Drawing.Point(49, 40)&#xA;chkBox1.AutoSize = True&#xA;chkBox1.Checked = True&#xA;&#xA;form.BackColor = System.Drawing.SystemColors.Window&#xA;form.AcceptButton = btnOK&#xA;form.BackColor = System.Drawing.SystemColors.Window&#xA;form.Text = &quot;Select Activity&quot;&#xA;form.TopMost = True&#xA;form.AutoSize = True&#xA;form.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)&#xA;form.Font = New System.Drawing.Font(&quot;Times New Roman&quot;, 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)&#xA;form.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font&#xA;&#xA;form.Controls.Add(checkedListBox1)&#xA;form.Controls.Add(btnOK)&#xA;form.Controls.Add(chkBox1)&#xA;' Get the width and height of the form.&#xA;Dim formWidth As Integer = CInt(form.Width)&#xA;Dim formHeight As Integer = CInt(form.Height)&#xA;&#xA;' Get the width and height of the Accept button.&#xA;Dim buttonWidth As Integer = btnOK.Width&#xA;Dim buttonHeight As Integer = btnOK.Height&#xA;&#xA;' Calculate the center position of the Accept button.&#xA;Dim buttonX As Integer = CInt((formWidth - buttonWidth) / 2)&#xA;Dim buttonY As Integer = CInt(formHeight - buttonHeight / 2 - 20)&#xA;&#xA;' Set the location of the Accept button to the center position.&#xA;btnOK.Location = New System.Drawing.Point(buttonX, buttonY)&#xA;form.Name = &quot;Form1&quot;&#xA;form.ShowDialog()" DisplayName="ActivityForm" sap:VirtualizedContainerService.HintSize="530,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+        <ui:InvokeCode.Arguments>
+          <OutArgument x:TypeArguments="swf:CheckedListBox" x:Key="checkedListBox1">[Out_finalList]</OutArgument>
+          <InArgument x:TypeArguments="sd:SizeF" x:Key="AutoScaleDimensions" />
+          <InArgument x:TypeArguments="swf:AutoScaleMode" x:Key="AutoScaleMode" />
+          <InArgument x:TypeArguments="sd:Size" x:Key="ClientSize" />
+          <InArgument x:TypeArguments="swf:Control" x:Key="Controls" />
+          <InArgument x:TypeArguments="s:String[]" x:Key="countries ">[ArrayOfActivitySelectedUser]</InArgument>
+          <InArgument x:TypeArguments="swf:DockStyle" x:Key="Fill" />
+        </ui:InvokeCode.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeCode>
+      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="530,53" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Out_finalList.CheckedItems]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_3" ItemToAppend="[currentItem.ToString]" List="[listOfCheckedActivity1]" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+      <Assign sap:VirtualizedContainerService.HintSize="530,83" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[ArrayOfActivitySelectedUser]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[listOfCheckedActivity1.ToArray]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="530,53" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Your choices is : &quot;+Environment.NewLine+String.Join(Environment.NewLine,ArrayOfActivitySelectedUser)]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MessageBox>
+    </Sequence>
+    <Sequence DisplayName="invoice" sap:VirtualizedContainerService.HintSize="1613,81" sap2010:WorkflowViewState.IdRef="Sequence_61">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="clothesDescription" />
+        <Variable x:TypeArguments="x:String" Name="StaysDescription" />
+        <Variable x:TypeArguments="x:String" Name="IntcrestsDescnption" />
+        <Variable x:TypeArguments="x:String" Name="TicketUnitPrice" />
+        <Variable x:TypeArguments="x:String" Name="clotheUnitPrice" />
+        <Variable x:TypeArguments="x:String" Name="StaysUintPrice" />
+        <Variable x:TypeArguments="x:String" Name="IntcrestsUintPrice" />
+        <Variable x:TypeArguments="x:String" Name="TicketTotal" />
+        <Variable x:TypeArguments="x:String" Name="clothesTotal" />
+        <Variable x:TypeArguments="x:String" Name="StaysTotal" />
+        <Variable x:TypeArguments="x:String" Name="IntcrestsTotal" />
+        <Variable x:TypeArguments="x:String" Name="InvoiceNumber" />
+        <Variable x:TypeArguments="x:String" Name="adress" />
+        <Variable x:TypeArguments="x:String" Name="DateTo" />
+        <Variable x:TypeArguments="x:String" Name="CurrentLocation" />
+        <Variable x:TypeArguments="x:String" Name="CityLocation" />
+        <Variable x:TypeArguments="x:String" Name="DateFrom" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="InputDialog_11" IsPassword="False" Label="please write your Email " Title="Email ">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="InputDialog_10" IsPassword="False" Label="[&quot;Please write your phone Number (+country_code phone) for whatsapp message summary &quot;+Environment.NewLine+&quot;If you don`t want receive summary in whatsapp app keep it Empty&quot;]" Title="Whatsapp message">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">[phoneNumber]</OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="434,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[TicketUnitPrice]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[cheap.ToString+"$"]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[adress]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[locationCity]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_32">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[DateTime]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[DateAndTime.Now.ToString]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MultipleAssign>
+      <ui:ReadTextFile File="{x:Null}" Content="[InvoiceNumber]" DisplayName="Read Text File" FileName="InvoiceNumber.txt" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+      <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+        <ueab:ExcelProcessScopeX.Body>
+          <ActivityAction x:TypeArguments="ui:IExcelProcess">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="668,6717" sap2010:WorkflowViewState.IdRef="Sequence_65">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="606,6606" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" KeepExcelFileOpen="True" ResizeWindow="Maximize" WorkbookPath="Copy of invoice travel 4.xlsx">
+                <ueab:ExcelApplicationCard.Body>
+                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,6337" sap2010:WorkflowViewState.IdRef="Sequence_62">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="CelClothes" />
+                        <Variable x:TypeArguments="x:Int32" Name="startClothesCel" />
+                        <Variable x:TypeArguments="x:String" Name="CelIntcrest" />
+                        <Variable x:TypeArguments="x:String" Name="CellEmpty" />
+                        <Variable x:TypeArguments="x:String" Name="g" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence DisplayName="Write one cell Dynamic" sap:VirtualizedContainerService.HintSize="510,2260" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;B4&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[InvoiceNumber]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;D4&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[DateTime]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;B5&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[email]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;B6&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[adress]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;D6&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[phoneNumber]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;B8&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[&quot;this ticket from &quot;+locationCity+ &quot; To &quot;+nameCountry+&quot; For &quot;+NAdults+&quot; Adults and &quot;+listCountainAllAges.Count.ToString +&quot;Children&quot;]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;C8&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_8" Value="[Cint(cheap).ToString +&quot; per traveler&quot;]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;D8&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_11" Value="[Cint(cheap*(Cint(NAdults)+Cint(listCountainAllAges.Count)))]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;B9&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_7" Value="[&quot;you will stay in &quot;+staysUserSelected.Split(&quot;   #   &quot;)(0)+&quot; from &quot;+checkInDate+&quot; to &quot;+checkOutDate]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;C9&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_9" Value="[System.Text.RegularExpressions.Regex.Match(staysUserSelected.Split(&quot;   ##   &quot;)(1),&quot;((\d+.\d+)|(\d+-\d+)|(\d))&quot;).Value]" />
+                        <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;D9&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_12" Value="[System.Text.RegularExpressions.Regex.Match(staysUserSelected.Split(&quot;   ##   &quot;)(1),&quot;((\d+.\d+)|(\d+-\d+)|(\d))&quot;).Value]" />
+                      </Sequence>
+                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                        <ui:MultipleAssign.AssignOperations>
+                          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_33">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Int32">[startClothesCel]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Int32">10</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_34">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Int32">[numForThing]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
+                              <ui:AssignOperation.To>
+                                <OutArgument x:TypeArguments="x:Int32">[emptyCell]</OutArgument>
+                              </ui:AssignOperation.To>
+                              <ui:AssignOperation.Value>
+                                <InArgument x:TypeArguments="x:Int32">[startClothesCel+1]</InArgument>
+                              </ui:AssignOperation.Value>
+                            </ui:AssignOperation>
+                          </scg:List>
+                        </ui:MultipleAssign.AssignOperations>
+                      </ui:MultipleAssign>
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Clothes" sap:VirtualizedContainerService.HintSize="510,1393" sap2010:WorkflowViewState.IdRef="ForEach`1_7" Values="[ArrayOfClothesSelectedUser]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:String">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1207" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;A&quot;+emptyCell.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_14" Value="[&quot;&quot;]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;B&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_15" Value="[numForThing.ToString+&quot;-&quot;+currentText.Split(&quot;price=&quot;)(0)]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;C&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_10" Value="[currentText.Split(&quot;price=&quot;)(1)]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;D&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_13" Value="[currentText.Split(&quot;price=&quot;)(1)]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[emptyCell]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[emptyCell+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[numForThing]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[numForThing+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[startClothesCel]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[startClothesCel+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
+                      <Assign sap:VirtualizedContainerService.HintSize="510,81" sap2010:WorkflowViewState.IdRef="Assign_25">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[startClothesCel]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[startClothesCel+1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_26">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[numForThing]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;A&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="510,159" sap2010:WorkflowViewState.IdRef="WriteCellX_16" Value="[&quot;Activity&quot;]" />
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Activity" sap:VirtualizedContainerService.HintSize="510,1073" sap2010:WorkflowViewState.IdRef="ForEach`1_8" Values="[ArrayOfActivitySelectedUser]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:String">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,887" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;B&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_17" Value="[numForThing.ToString+&quot;-&quot;+currentText.Split(&quot;Price is&quot;)(0)]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;C&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_20" Value="[currentText.Split(&quot;$&quot;)(1).Split(&quot;per&quot;)(0)]" />
+                              <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;D&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteCellX_21" Value="[Cint(currentText.Split(&quot;$&quot;)(1).Split(&quot;per&quot;)(0))*Cint(NAdults)]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[startClothesCel]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[startClothesCel+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[numForThing]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[numForThing+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
+                      <ueab:DeleteRowsX DeleteRowsOption="Specific" DisplayName="Delete Rows" HasHeaders="True" sap:VirtualizedContainerService.HintSize="510,138" sap2010:WorkflowViewState.IdRef="DeleteRowsX_1" Range="[Excel.Sheet(&quot;Sheet1&quot;)]" RowPositions="[startClothesCel.ToString+&quot;-&quot;+&quot;35&quot;]" />
+                      <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;C&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="510,159" sap2010:WorkflowViewState.IdRef="WriteCellX_18" Value="[&quot;Sum Of Total&quot;]" />
+                      <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Sheet1&quot;).Cell(&quot;D&quot;+startClothesCel.ToString)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="510,159" sap2010:WorkflowViewState.IdRef="WriteCellX_19" Value="[&quot;=Sum(D8:D&quot;+(startClothesCel-1).ToString+&quot;)&quot;]" />
+                      <ueab:SaveAsPdfX EndPage="{x:Null}" StartPage="{x:Null}" DestinationPdfPath="invoice.pdf" DisplayName="Save Excel File As PDF" sap:VirtualizedContainerService.HintSize="510,159" sap2010:WorkflowViewState.IdRef="SaveAsPdfX_1" SaveQuality="StandardQuality" Workbook="[Excel]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelApplicationCard.Body>
+              </ueab:ExcelApplicationCard>
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelProcessScopeX.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelProcessScopeX>
+      <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_45">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[InvoiceNumber]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[(cint(InvoiceNumber)+1).ToString]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="InvoiceNumber.txt" sap:VirtualizedContainerService.HintSize="434,135" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[InvoiceNumber]" />
+    </Sequence>
+    <Sequence DisplayName="send Email" sap:VirtualizedContainerService.HintSize="1613,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="loay1alhindi2@gmail.com" DisplayName="Use Gmail" EmailAddress="loay1alhindi2@gmail.com" sap:VirtualizedContainerService.HintSize="530,2034" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+        <umab:GmailApplicationCard.Body>
+          <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,1850" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="clothes" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_16">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[clothes]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[String.join(Environment.NewLine,ArrayOfActivitySelectedUser)]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:BuildDataTable DataTable="[ActivityDt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Activity&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Activity_x0020_Prize&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+              <ui:BuildDataTable DataTable="[clothesDt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Clothes&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Clothes_x0020_Prize&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,465" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[ArrayOfActivitySelectedUser]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:String">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,277" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentItem.Split(&quot;Price is&quot;)(0),currentItem.Split(&quot;Price is&quot;)(1)}]" DataTable="[ActivityDt]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,189" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="[_out_ForEach_Generic_1_4__CurrentIndex]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,465" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[ArrayOfClothesSelectedUser]">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:String">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,277" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{currentItem.Split(&quot;price=&quot;)(0),currentItem.Split(&quot;price=&quot;)(1)}]" DataTable="[clothesDt]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,189" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+              </ui:ForEach>
+              <umab:SendMailX Bcc="{x:Null}" Body="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Account="[Gmail]" Cc="loay1alhindi1@gmail.com" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="434,407" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="High" IsDraft="False" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" Subject="TripTipsBot" To="[email]" UseDocumentAsBody="False">
+                <umab:SendMailX.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                    <InArgument x:TypeArguments="x:String">invoice.pdf</InArgument>
+                  </scg:List>
+                </umab:SendMailX.Files>
+                <umab:SendMailX.HtmlBodyFromFile>
+                  <umabh:HtmlContentArgument FilePath=".data/HtmlContent0.html">
+                    <umabh:HtmlContentArgument.RuntimeImages>
+                      <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                    </umabh:HtmlContentArgument.RuntimeImages>
+                    <umabh:HtmlContentArgument.ValueMappings>
+                      <scg:List x:TypeArguments="umabh:HtmlValueMappingBase" Capacity="8">
+                        <umabh:HtmlTableValueMapping Name="clothesDt" Value="[clothesDt]" />
+                        <umabh:HtmlTableValueMapping Name="ActivityDt" Value="[ActivityDt]" />
+                        <umabh:HtmlTextValueMapping Name="stay" Value="[staysUserSelected]" />
+                        <umabh:HtmlTextValueMapping Name="Destination" Value="[nameCountry]" />
+                        <umabh:HtmlTextValueMapping Name="Departure" Value="[locationCity]" />
+                        <umabh:HtmlTextValueMapping Name="TicketPrice" Value="[Cint(cheap)]" />
+                        <umabh:HtmlTextValueMapping Name="WeatherCondition" Value="[strWeather]" />
+                        <umabh:HtmlTextValueMapping Name="Temperature" Value="[strTemp]" />
+                      </scg:List>
+                    </umabh:HtmlContentArgument.ValueMappings>
+                  </umabh:HtmlContentArgument>
+                </umab:SendMailX.HtmlBodyFromFile>
+              </umab:SendMailX>
+            </Sequence>
+          </ActivityAction>
+        </umab:GmailApplicationCard.Body>
+        <umab:GmailApplicationCard.ClientId>
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+        </umab:GmailApplicationCard.ClientId>
+        <umab:GmailApplicationCard.ClientSecret>
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String" Value="" />
+          </InArgument>
+        </umab:GmailApplicationCard.ClientSecret>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </umab:GmailApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="whatsapp" sap:VirtualizedContainerService.HintSize="1613,2848" sap2010:WorkflowViewState.IdRef="Sequence_71">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If Condition="[string.IsNullOrEmpty(phoneNumber) = false]" sap:VirtualizedContainerService.HintSize="560,2737" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="526,2555" sap2010:WorkflowViewState.IdRef="Sequence_73">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: WhatsApp" sap:VirtualizedContainerService.HintSize="484,2467" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="DebuggerApi" IsCVEnabled="False" ScopeGuid="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V2" WindowResize="Maximize">
+              <uix:NApplicationCard.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2210" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="WhatsappText" />
+                      <Variable x:TypeArguments="x:String" Name="ActivityWhatsapp" />
+                      <Variable x:TypeArguments="x:String" Name="whatsappClothes" />
+                      <Variable x:TypeArguments="x:String" Name="whatsappActivity" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue to Chat'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://api.whatsapp.com/send/?phone=962799508218&amp;text&amp;type=phone_number&amp;app_absent=0" DesignTimeRectangle="590, 386, 184, 51" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Continue to Chat'" FullSelectorArgument="&lt;webctrl id='action-button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='action-button' tag='A' type='' class='_9vcv _advm _9scb' aaname='Continue to Chat' check:innerText='Continue to Chat' /&gt;" Guid="736198c7-b9fb-4903-b9a4-b6599d204def" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALwAAAA3CAYAAAC2PiCwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVSSURBVHhe7Z29bt02GIZ7DV26dull9Ap6BRl6KTGyBOlQdAk8dihcoJmKjEmGJAiQKTCC1ujgDh48FKiBAM7SGFlYvZI+ij8fRekc+oiS3xd4Bp9DUxT1kEfmkeQvDMPcoVB45k6luPD/ff5sXlz8bR69fWm+f/qb+faXY/PN8Q/mq58emC9/PCJEBX7AE/gCb+APPIJPJVNM+Cd/vTf3fv9V3RlC9gFewa8S2Uv4jzef2pGIkak1lJCSwDP4Bu92zc7CH797a75+/FBtGCG3CbyDf7tktvB//PuP+e7Jz2pDCDkk8BA+zsks4U/+PFU3TMiSwMupmSw8zp20jRFSA/BzSiYJf/T6uboRQmoCnuaSFZ4zO1kTuZl+VHies5M1MnZOnxQef/1qlRGyBlKrN0nhufRI1gz81aIKj0V9rRJC1oT25VQkPL625TeoZAvA4/AyhEh4rsqQLRGu2kTC80IwsiXgsxtPeFyCqf0SIWvGvbTYE57Xs5MtAq8lVnjcWaIVJmQLyJ1TVnjcTqUVXIr7l+FF/lfmRClXhFcX5vrD8K1yu+2bC3PfLbMYp+a8ZFuwr32PSs7P/DLl9r9w2/cAfiNW+HpWZ5pOQoOCjpIBEB6c/Xlm3tw0FTvC18TJh7gvdqWty3wyb145r8sAuIUBX7Lt+yKrNVZ43DirFTw0Y53UHbDSM/0dEf7sqqkokN17b5hMtig8/Eas8LhbXCt4UPrZJjmLn51GssvML7m+fOa838l8fXnaSS2xB6H/NLHpBpN/wLsy5822vbLeAJEy8jPQBlJQx6gM/e/buLLq7Y7rEHKDuulXp+2y/yde3yqDpR8oQ6TMWNuXAX4jVvgq1t/bDpw+g3czvtOZ/YAZpB863sqYKpP8SBe5nO0EM+I04ft6nO1M+cSKZknlFCRfj9a+NHYSsdvo98Vth/KJEbYjavuCyHq8Fb6G58Z0HT1R+MSngV9HLDPwD8Q04bVPjuF38sLr+6bV7RNKo0uUqSf3yRmgtjUQvG1H0K9qmUqEh9+IFV4rdGhmCa/MMC3ewe2kC0XYRfgxmfNl4m0IqjgOubbq5QJ2ET6sK9XfDe22beoUHiBVzfBdp84RXilbs/CpzBRem8nH5dLal2aS8O3Pkv71oExNwkczfBXn8LmZyH0/PABeGXldF2Qx4UfETpFrq1cuWX9u+/77eeET9VUsfHQOX8UqTcNYJ7XvyayeGBztwbIzf3dgDiW8v53uNSmj75fePpfw9/R6tO0HpCYI+96wj3nhtT6R41On8NEqTS3r8FaUoKM6kf1ODjtYBsFw4A8lfP+z0+aubU2CQRFtJ3MKF0nT76NbT7et/Klg1F9AqS8vfLy/MmgQ6auo7QsSrcPXdh28FcZGP6AyECSamOPCN9iD1R3Q+cIP5STYZrudkTJTJLVCNhnaENQzRypHTIm/b1OEB8q+hBOO2vZliL5pre1aGkJKEl1Lw6slyZaJrpZEeD082SLq9fAI73giWyR5xxNSxXo8IYWQ9XdJJHxtqzWE7IOszkgi4flcGrIVJj2XBuGTx8gWmPTkMQmfLUnWzKxnSyJ8ejBZM7OfHozw+fBkjez0fHgJV23ImghXZcJkhUf4P57IGijyP54knOlJzeRmdslk4RGe05MaGTtnDzNLeAR//XLJktQAPEytxqQyW3gJFvX5jSxZAninfak0JTsLj+BrW5w78YIzcgjgGXwLLxeYk72Ed4NLMHk9PbkN4JV7ie8+KSa8BHeW4HYqjETcOIu7xTEyq3juDakW+AFP4Au8gT/wSO5UKpXiwjNMzaHwzB2KMf8Di9k8m7hJ1o8AAAAASUVORK5CYII=" InformativeScreenshot="48bf8b286cd750722a127eef7783447c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Share on WhatsApp' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="576, 534, 213, 26" ElementType="Text" FriendlyName="'Don't have WhatsApp yet?'" FullSelectorArgument="&lt;webctrl tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H4' type='' class='_9vd5 _9scr' aaname='Don&amp;apos;t have WhatsApp yet?' check:innerText='Don&amp;apos;t have WhatsApp yet?' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="8" DelayBefore="3" DisplayName="Click 'use WhatsApp Web'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://api.whatsapp.com/send/?phone=962799508218&amp;text&amp;type=phone_number&amp;app_absent=0" DesignTimeRectangle="603, 474, 159, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'use WhatsApp Web'" FullSelectorArgument="&lt;webctrl aaname='use WhatsApp Web' parentid='fallback_block' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='use WhatsApp Web' parentid='fallback_block' tag='SPAN' type='' class='_advp _aeam' check:innerText='use WhatsApp Web' /&gt;" Guid="a669c5ca-5517-46e7-9bce-bd4ec777f208" ImageBase64="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" InformativeScreenshot="6f5005701c7d0faa24edab90e9467d22.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Share on WhatsApp' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="615, 362, 135, 51" ElementType="Text" FriendlyName="'Download'" FullSelectorArgument="&lt;webctrl parentid='fallback_block' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='fallback_block' tag='A' type='' class='_9vcv _advm _9scb _9scr' aaname='Download' check:innerText='Download' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAA3CAYAAAA8EbnxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASGSURBVHhe7ZyxbtQwGMd5BhZWFh6DJ+AJGHiUViwIBsSCOjKgQ6ITYiwMtKrUCZ0QVAxl6HADEpUqHQt36mLyj2P3s/MlcXJR4sTfX/qL4vgcn7/fObbj5I4SiQIlsIiC1Tss/25u1OfLX+r52Rf15ON79fDtgXpw8ELde/VU3X25L+7ZaFe0L9oZ7Y12R/sjDn2rN1gOf35Tjz+8Y7+QeBwjHohLX9oJlr/bTU4yyOYqK47DiA/ihHjtos6wHHw9U/dfP2MrJ47TiBfi1lWtYfn+57d6dPiGrYx4Gkb8EMe2agXL4seSPbl4mkY82ygYFlzzuBOKp23ENVRBsOyffGJPJJ6HEd8QNcIiPUoaDulhamGRMUpabhrDVMKC0TJXoHjerpslVcIi0+M0jbhXiYUFCzdcQeI0XLVwV4IFS8KyMpu2EX/u1kAJFpn9iGFudlSCRW4KimFw4MuBBbezuQ+K07S/vcGBRfajiKnBA5WFBTuruA+I0zbdcWdhwVY8LvOQXlwXlSnpSi2Y/MN7qS6y2lycc8d69vlVdqaNOj1mjg1ocGFkYYlhFpTDsr1Ue1763grTuPEbLkVY6KzIwoLNvlzmIV0FS9Ox4ZweLODCyMKC3eFc5iFdC8TxpVpnh91A6eDdilyuuMZm0vJzXuOG6ZE63Sq1Xi3zf62c+nCw1NTBOD8vFQOBkyc7vooDFnBhZGGJYX2lvvfQQVmvjvT/C3h0oHWe/PM2WOXA6uM0zQCCMvXfzvHiHPacfpmNdchcBWgpD1NuBLDQ9RYLSwzP9dTDQgNblZcCVQTfBhLHNmpNytBBMQHx82u753Fhaa5Dkccr0wWIP28s4zRwYWRh4TIO7XBY+AaGaRl5g5vyAEb294KkOced8vnyXFjC6lBKtzIguABaMz3SWDaaUM9Cf7F8YGGnDNJzAIw8f56mLwHIe1tGN1ga6+CPRRB8CkJxySnB4vR645ntWaIfsziN1/Crtum3wUW6DohJ83/R3WCpr0NFHqfX8OvB5RnP7Jgl9tmQf4zPqxueBlwH7ipLNwPKAor8FjwZZLaGJaQOPAj55xrAj2XMws6GYl5nYRuu6L5pI+sgUAAym8sAKVeXl8kJUHtYmutQgEC/E7ks2XKKtFK5EcDCrrNEs4LLygPAWgfPigHNNLwDgR+c3B1gIWlWpTp4x/FdauqklUESyToLu4Ibw70hcXxm7w3JXWcxZ/auMyT7WcTUlftZINkpJ6au3SkHxbDeIh7fdH3FqARLDLMi8fimsyCjEizy3JA4+LkhSJ5ITNvBTyQaybPOabr1s86QvEUhTXd6iwIk72dJy53fz2Iks6M0zM1+fDXCAsk75ebt3t4pZyQ9zDwd0qMYBcMCyRhmXm4ao/hqBQuE0bJMq6dtxK9u1lOl1rAYYeFGVnqnZcSrasEtRJ1hgbAkjGue3HyM24gP4sQt4bfRTrBQ4Xa27IeJy4iHv81gF/UGixF2VmErHkjGZl/sDgfZMTyXNEejXdG+aGe0N9od7U93uPWl3mERzVcCiyhQSv0HTtjgU/TAQkUAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:OutputDataTable DataTable="[ActivityDt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[whatsappActivity]" />
+                    <ui:OutputDataTable DataTable="[clothesDt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[whatsappClothes]" />
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="5" DisplayName="Type Into 'Type a message'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="DebuggerApi" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Text="[String.Format(&quot;Travel Recommendation [d(shift)]&#xA;Hello traveler!&#xA;&#xA;We have some exciting recommendations for your upcoming trip. Here's what you need to know:&#xA;&#xA;Flight Information&#xA;You'll be flying from {0}to {1}.&#xA;&#xA;Flight ticket price: {2}&#xA;Weather Conditions&#xA;The weather in {1} during your travel dates is as follows:&#xA;&#xA;   -The Weather Condition is : {3}&#xA;   -The Temperature is : {4}&#xA;Clothes to Take&#xA;Based on the weather conditions, here are some suggested clothing items:&#xA;&#xA; &#xA;&#xA;      &#xA;{5}&#xA;&#xA;&#xA;Stay Information&#xA;You'll be staying at {6} in {1}.&#xA;&#xA;Activities to Enjoy&#xA;While you're in {1}, consider the following activities:&#xA;&#xA; &#xA;&#xA;        &#xA;{7}&#xA;&#xA;&#xA; &#xA;&#xA;Have a fantastic trip!&#xA;&#xA;Best regards,&#xA;&#xA;Your Travel Advisor  &quot;,locationCity,nameCountry,CInt(cheap),strWeather,strTemp,whatsappClothes,staysUserSelected,whatsappActivity)]" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable BrowserURL="https://web.whatsapp.com/" DesignTimeRectangle="525, 684, 785, 42" DesignTimeScaleFactor="1" FriendlyName="'Type a message'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;footer&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div' parentid='main' tabindex='-1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='main' tabindex='-1' tag='DIV' class='_3Uu1_' aaname='' check:innerText='Type a message' /&gt;" Guid="1fe4044d-3c99-4830-ae5b-b0ca80c9e89d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAxUAAAAuCAYAAABeSDT5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARfSURBVHhe7dwxbttIGAbQPW2u4NLY3k0q94avEFc6gyqfwQFSBRsYQRJHXA2HpIYzQ0oWZQmw3wM+bLSkRiNV/ydS/uf7f8+NiIiIiIjIsVEqRERERERkUSZLxY/nn82v33+azWbTAAAAH1PoA6EXhH5Q6w0h1VIRy0S3CgAA8OGFfhB6Qq0/FKXi5eVvo08AAAC50BNCX8g7xKhUtFco4vkAAACF0BfyKxZDqQj3SLnlCQAA2Cf0hvQ3FkOpCG0DAADgEOnViqFU+CtPAADAoUJ/KEoFAADAaygVAADAIkoFAACwiFIBAAAsolQAAACLKBUAAMAiSgUAALCIUgEAACyiVAAAAIu8Qan42ny5+bf5dFXP7WN3GgAA8C68QalIxYKhSAAAwPulVAAAAIucuVTEx9err93jzuNd8+nmoXlKjq/vk9um7tfdiTuj41d3TXlG4ttDcz2cu01lvZ11c7s95/Yx/jdd/2n1eXqN7DXG7zG+r+G57XuNRmtefW6+fOsO7N3zeM3r1Tr7rLdm9wQAAKdx5lLRDdHJUB2EghAH3t2gnBeRdKhuC0XyuLZm6ml1txvWh9LQPSz0ZaIvKsnw3r9mN6wPa7SPk0KQvUa+3/Wq22soU2khenwY1pjfc/mZ9OXk0D0BAMCpnL1U1Ifd/nE5LLfS4bt9fn5lIl1jv12JqakM3/nwv5WuUVuvHfK79zH5esMVmv1Ga1T2k3/W+/YEAACncv5S0f2/fuAdD7rjY4O0SLQDdXflIMvct/BhyE7PrQ75rYlSccDVlSL9c4Y918pQPLe296k916/MpJ/1AXsCAIATuUCp2ApDdlsk8uPx8f5SkQ/nc7rBPfmGvvYt/s5xpWJ6vZ3+FqXiakH7/sLQ37+v+T3Xrzikn+XhewIAgKUuUyraoXk7QBe3Mk0Mw+lQ3z7n8Fud5gtBzWtLRfx3OeRPCevX9z+suW/P4XhRrMb7ft2eAADgeBcqFd2QfJN/4x7PH/0VpMqQ3w7Mo6F7+7z78RA+yEtIO5CftlT0Vxry58TH2d6S/Yx/jJ0Uqr17jntM30P7maR7mN0TAACczsVKRRyU82/s+8E6/nnU9lahbHiO4nn98dEwXTHcdhSyLTGjQlA4olQE3eA/JDm/H/hjyrLQJ11v/57jPvtzbh8rn/XMngAA4FTeuFTMqAzqo2/reaVQMvKSBgAAb+9CpaK8fSdSKo7VXg1xJQIAgAs4c6nY3bZULw5KxWHGtz618aNsAAAu5MylAgAAeG+UCgAAYBGlAgAAWESpAAAAFlEqAACARYpSsdlsukMAAADzQn8oSsWv33+6wwAAAPNCfyhKxY/nn9u20Z0BAAAwIfSG0B+KUhES2oZeAQAATAl9Ib1KETIqFSEvL38VCwAAoBB6QugLeYcoSkVIe8VCswAAADqhH+RXKPpUS0VIuEcqlgvtAgAAPqrQB0IvSH9DkWeyVIiIiIiIiBwSpUJERERERBbkufkfA4ojTA1lhe8AAAAASUVORK5CYII=" InformativeScreenshot="1c71c229099c4b114f9484ef569db219.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="477, 685, 40, 40" ElementType="Button" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-label='Attach' aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Attach' aria-role='button' tag='DIV' type='' class='_3ndVb fbgy3m38 ft2m32mm oq31bsqd nu34rnf1' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACzSURBVFhH7dQxCsJAEIVhD+kVrL2TdSqx8gZprGwtBA8QhNQbXiAWYYiwuw9c/IsfphiWr1hmN7zH1FKA3QF2B9gdYHeA3QF2Vx38eL7SqTvPaY52SqoO7m/3tD8c5zRHOyUBBrwK8E+Cda6Eieou1w9Yc7Sjck9eFlg3dkHlpjeit7/1H+DmvsRWwixgzdFOSYABrwLcHFjnSjdW5Z6uraqD3QF2B9gdYHeA3QF2B9jbmCbGE39tWyXWgAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://web.whatsapp.com/" DesignTimeRectangle="1326, 693, 24, 24" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;footer&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span' parentid='main' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='main' tag='SPAN' class='' aaname='' /&gt;" Guid="0e2ce6eb-96db-45b7-b147-7c5baf5070f4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFnSURBVEhL7ZXNS8JgHMf7Y4MOdumFUFMSLJQssw69HdbslBZYmkihhEHQCvWghw5JbyREWBp5/rZnsOHP3HTb404ePrdnz2d8+P22idZPB04yFnKHCBPpC9Rf3skB3hDhzFIYk/N+RLYF3Jaq+G7/ksM8+C+c82m4V6I4zxfx2WyRh+xgKFRxeYMQE6dccg8l1JBzr+8eQCrXyCVmMCfswh3aQDZ/bTq3ZaHK9GIQ8eMzPL02yMV62BZqsNx7Iu4rxrmJkB3OyFN5eJJGdD8O3+qmMjB9BQZ4wjFkC3LurzaRMYhQj8ZHE7WHOopSCalcAcJRCms7AjyhGKYWAn2lDCW3/PLduUcuZLV0hWpSNgQsqT+yZSkpm+Dc1c3gpLMBm0Mj7+hdpUoEvdgWurzLEJNW18KEUFl8Nom2Fn+QUM7GhkUqG2czYqikI/t49wqd+T05+QNOZi7x+PxGDvCGCJ1gLORMB3+2JZTtFUX28gAAAABJRU5ErkJggg==" InformativeScreenshot="864f6652029d89082f43b55ec0a834d8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://web.whatsapp.com/" DesignTimeRectangle="477, 685, 40, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-label='Attach' aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Attach' aria-role='button' tag='DIV' type='' class='_3ndVb fbgy3m38 ft2m32mm oq31bsqd nu34rnf1' aaname='' /&gt;" Guid="f8cb8959-c781-4fd8-b2c9-cfbfe1738d45" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACzSURBVFhH7dQxCsJAEIVhD+kVrL2TdSqx8gZprGwtBA8QhNQbXiAWYYiwuw9c/IsfphiWr1hmN7zH1FKA3QF2B9gdYHeA3QF2Vx38eL7SqTvPaY52SqoO7m/3tD8c5zRHOyUBBrwK8E+Cda6Eieou1w9Yc7Sjck9eFlg3dkHlpjeit7/1H+DmvsRWwixgzdFOSYABrwLcHFjnSjdW5Z6uraqD3QF2B9gdYHeA3QF2B9jbmCbGE39tWyXWgAAAAABJRU5ErkJggg==" InformativeScreenshot="cf7e2efe0fd5239faafc618e960e32e9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Document'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://web.whatsapp.com/" DesignTimeRectangle="525, 433, 74, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Document'" FullSelectorArgument="&lt;webctrl aaname='Document' parentid='main' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Document' parentid='main' tag='SPAN' type='' class='erpdyial tviruh8d gfz4du6o r7fjleex lhj4utae le5p0ye3' check:innerText='Document' /&gt;" Guid="9a0c2b63-b850-4e47-a78a-9b91091d6fbb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE4AAAAZCAYAAACfIRhSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGjSURBVFhH7ZZLcsIwDEB7r96g656EyYprMOw4RVhwCza5BCw4g2tJdizJDhgRFm31ZjwT/JGsZyftR3BMuDgjLs6IizPi4oy4OCMuzoiLMyLETfvv8PlVt2G8phlOpha3n9KvzBR2KPAQn/4Z58Ni3R3igGs4bpbG/jCvi4u0gmAf3MbUNqdwS0OFJJ3N252hH27yNhwvOGlG7oHWDuMkYpT1uo8jx/Xecp7buC1zWH04ztfHMU6/uMspDKxQSigLp2Rcbto8jxllPyuO5ymF6r46L5eJcZm8LKZ8vxtv1So3ThRab4yQ/VhQ8xYC/eLkHyfK0eoTeXUd6uC1SESLWkUcT4zP7YAQIxfFn2teEycPTfZhjPi7bkqcrvUt4iBIPqFfIG45L9GsdX1xerOtzQOy//GrqmPo74xN3P28xPvF4eL6BOmDLG8MrhcbpoJEzBgvF6jnU0w+3yaO3ojGOraPLnHqu8ipxcHGRWsbB+ZCc9MbQZK8ufF4cgwKlQUZxQFJXsnbOORH4iLFyZ1/R5x+XJwRF2fExRlxcUZcnIkQfgBSeLzdPs12JQAAAABJRU5ErkJggg==" InformativeScreenshot="00bc3251e8f59b35bd14168705fa215b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="HardwareEvents" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Text="C:\Users\Student\Documents\UiPath\TravelRecommendationRobot\invoice.pdf" Version="V3">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="201, 410, 237, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;" Guid="a041e649-8df5-4093-9b86-f788f98c9d45" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPEAAAATCAYAAABBR+uAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVHhe7dMBDQAADMOg+ze962gCHrgBaRJDnMQQJzHESQxxEkOcxBAnMcRJDHESQ5zEECcxxEkMcRJDnMQQJzHESQxxEkOcxJC2PbJASJ4qgGHOAAAAAElFTkSuQmCC" InformativeScreenshot="4283d032502a0bde4c47f1f89655aeec.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="470, 434, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Open' check:text='unchecked' /&gt;" Guid="3dc3dc2b-1595-4ab8-acad-be050c1dd941" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAeCAYAAAChf3k/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEzSURBVGhD7ZbBEYQgDEXpiW6oZG+0QitUsWc7sIOsKChB3HFGN8LOP7xDMHB4gT+qcRwJyAHhwkC4MEy4er3BD2COWVFpBtdhjlkRG4ZhADcA4cJAuDAQLgyEC9OucGdIKbWira/3dUabwmfZmqxPa56s/g/pDQpf5BpXrHtLWhly+VqHtCf8UGwYRLr1jkx4AS70ViJnPiPFUTor7rFbVD3xYtoUri353bf85gd5k7TUNwsuhpHiaIqnRWzcY9y6vg1DjjaFn73ha8YP5EwcBrvdkVlyuWd/hgTtCT+V4aWsbM/hwCD8mN1zD3LyzC3q3TBq+Qzh3yn+w/mNX2QZo+vfy1hBpFzlGVl3AOHCQLgwnQrvFwgXBsKFOS0c3AtzzIpKM7gOc5wX4PdAuDAQLspIHzXPr3L4gVkTAAAAAElFTkSuQmCC" InformativeScreenshot="aa8eeefea84ce6b47fd23ddc2738fdb4.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="470, 405, 188, 23" ElementType="DropDown" FriendlyName="'All Files'" FullSelectorArgument="&lt;wnd ctrlid='1136' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1136' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMAAAAAbCAYAAAAqJYDrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGfSURBVHhe7djNkYMwDIZheqKXHNwMheRCAzmlAopIAXRAB1pkfmwMOGYyu7MTvYdnANtADvpApBqGQQCrCABMWwPweDwAMw4D0Pc98PUIAEwjADCNAMA0AgDTCABMuxyA1lVSuTYZb8VVtTRdup+uGc+N1E0nfddI/fZc4HdcC4AWa+3E1WmRlgbgXXETAPytSwHomto/tZdtmCMA+B+ez+fhuDqauxCATprlye/fBI1069wnAcic69ujpWVy0vr1+jtCG+XaeS3Me71ecrvd5H6/7+Z0TOd0TTxeHoBN0Udh8MelAQiFG4r37NzkOq2b3jrjdv8NAkyOQnBW/Ko4AGnbo8ehEDOFuyoZj/Y3T/+Z3m8e37ZgQBCHIFf8qjAAWphJMXpLW3JSxLtrXA3Acv09H8DxN9AC4cgSglzxq7IAaNux6fnV1Ivn25jYxQD4/fyTfv8xDgRa+LniV0UB0P/+jwottEFnRRwrGU/WpG2Q3kvDuI6dvyGAEmVvAOBLEQCYRgBgGgGAaQQAphEAmHYaAMCKXQAAiwgADBvkByEJDfBwSxnBAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DelayBefore="1" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a79e511a-c36e-4647-b37f-07d335e96a82" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://web.whatsapp.com/" DesignTimeRectangle="1298, 657, 60, 60" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl aria-label='Send' aria-role='button' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-label='Send' aria-role='button' tag='DIV' type='' class='p357zi0d gndfcl4n ac2vgrno mh8l8k0y k45dudtp i5tg98hk f9ovudaz przvwfww gx1rr48f f8jlpxt4 hnx8ox4h k17s6i4e ofejerhi os0tgls2 g9p5wyxn i0tg5vk9 aoogvgrq o2zu3hjb hftcxtij rtx6r8la e3b81npk oa9ii99z p1ii4mzz' aaname='' /&gt;" Guid="9223b857-8e18-47e8-962a-c18c796bfdef" ImageBase64="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" InformativeScreenshot="df8e458aece2848479119c2429af8a75.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='WhatsApp' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="571, 579, 650, 45" FriendlyName="'Type a message'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;span&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' parentid='app' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='tvf2evcx m0h2a7mj lb5m6g5c j7l1k36l ktfrpxia nu7pwgvd p357zi0d dnb887gk gjuq5ydh i2cterl7 fhf7t426 sap93d0t r15c9g6i cm280p3y ln8gz9je gc15jzxb eujn52yf l9g3jx6n ckm995li lyvj5e2u d5zlj0ol bbr44loe ooj5yc5b m8i16etx cw0ivh8j' parentid='app' tag='DIV' aaname='' check:innerText='Type a message' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NApplicationCard.Body>
+              <uix:NApplicationCard.TargetApp>
+                <uix:TargetApp Area="-8, 0, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="8e852bde1577e69e3907cb2da05f3c85.jpg" Selector="&lt;html app='chrome.exe' url='https://wa.me/962799508218' /&gt;" Title="New tab" Url="[&quot;https://wa.me/&quot;+phoneNumber]" />
+              </uix:NApplicationCard.TargetApp>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_74" />
+        </If.Else>
+      </If>
+    </Sequence>
+  </Sequence>
+</Activity>

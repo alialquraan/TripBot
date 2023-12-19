@@ -1,0 +1,154 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="582,912" sap2010:WorkflowViewState.IdRef="Workflow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Python.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Workflow" sap:VirtualizedContainerService.HintSize="592,847" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Cheap Flights, Plane Tickets &amp; Airline Deals - Expedia" sap:VirtualizedContainerService.HintSize="530,736" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a46dc7e9-94dc-4a1b-9285-91d3ce9a4d8b" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,519" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="lolo" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Get Text 'Adults'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a46dc7e9-94dc-4a1b-9285-91d3ce9a4d8b" TextString="[lolo]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.expedia.com/Flights" ContentHash="hIqu4l9lp0SEq8H7WJXOYw" CvElementArea="980, 316, 159, 52" CvType="InputBox" DesignTimeRectangle="1026, 309, 120, 48" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Adults'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='FlightSearchForm_ROUND_TRIP' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='uitk-layout-flex uitk-layout-flex-item uitk-step-input-controls' parentid='FlightSearchForm_ROUND_TRIP' tag='DIV' aaname='' /&gt;" Guid="b49bebc3-f43c-40bb-a60d-dffe830cd59d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAA0CAYAAABIFVy/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP0SURBVHhe7ZrLaxRBEIf9N7x4F0Tw4EH8C8SbgjdRCIaIInjwFSPBRDFuHuLrYOKqJzHqxSR4UKIgAQ/mEtdDECWuibp5kdduHntImW+YDUkgYWa6szs93R807PbMdA31m+muqp4d4rAKJ7hlOMEtwwluGU5wy3CCW4YT3DKc4JbhBLcMJ7hlaBd8cXFJBr4OSnfPB2lPd0pz62NpuPnQa/ymj2MDmUHvXNuotH+0CT46OiFd3b3ejXe+eitf+jMyMpKTQmFBlpeXvcZv+jjGOZzb1dPrXZt04uIfLYK/e98nTal2+dTX7910UDiXa243d3hjJJU4+UdJcJ48pqA3K09uoTDv94aHaxmDsZL0tsfRP5EFz2b/SKq1w5t+dMFYjMnYphNX/0QSnKcMw5lv3/0efTAmY5v8psfZP5EEZ2rR+eRuhLGxYSpx9k9owQkeWE+2G2yYGMjF3T+hBGcaIWJUCUCCgg0iW5OmdhP8E0pwckLShHKBLXJXUzDBP4EFp+pDISBMHqkKtrBpQkXOFP8EFpxSH9WfcoNNSpE6mJqakVupR7J77yHZf+CodKRfysLCon9UDRX/tNxJey0KYf0TWHDqu9sZeW4GNrGtytJSUa433peWtrSMjU/Kr5VctuZsvTx59to/Qw0V/5yqqZPq03X+v3CE9U9gwUkDqPOWG2zqSNEmJqaktq5VhoaG/R6R3o+f5eKVlJa3XMU/KoKH9U9gwdnJKef6VAKb2NbN9PSsXL7aIs9fdPs9aqj4R0XwsP4JLDjBATs6QeDmg7QgYBPbOmm7+1R27joo9Q33ZC5f8HvVCOMf1usjx86stj37DnttbV/QNT2sf6wUPJ+fl+GRf9Jw44G3rrO+q5I4wU2f0ovFoszMzq0TJfv7r5yourRuXY9K4qZ004M2UpfjJy9Ibk1lKpcbl6rqWvnxM+v3RCdxQZvpadnsXF7OnW9cTctKU3rttTYtUXri0jLekIoVXjJ6Ci+jY5Peml0qvDQ1t3vFGB2o+If1OuiavZGw/gksuCutbk3iSqtAob7smwM9Bm2eGOCfUIKzFceWXLm2/9hqNG17NO7+CSU4uA8gtiZRH0CUIA3YzoidsXWkYpUizv6JJDjTiPuIcXPi7J9IgoP7THlrEvWZcgmeMqYW1hOVQIVrGYOxTH6zNxJH/ygJXoLggYiRNCFMHsq5XENka2KAFpQ4+UeL4MCTR05IIYDqD9MPdV5umg0LGr/p4xjncC65a5Le6s2Ii3+0CV6Cqg+lPuq7TEHs5HDjNH7TxzFKkSZU0HRTaf9oF9wRb5zgluEEtwwnuGU4wS3DCW4ZTnDLcIJbhhPcMpzgViHyH5/2u/jFwhEvAAAAAElFTkSuQmCC" InformativeScreenshot="5b6ca26788bc8819c7145b58d6bbbdd2.png" IsResponsive="True" Reference="zvDLkfmKnkW6khp1sq9DTg/hz6nhVY9J0mR7NUjcukPYg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Cheap Flights, Plane Tickets &amp;amp; Airline Deals - Expedia' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="819, 315, 207, 36" ElementType="Text" FriendlyName="'Adults'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;label' idx='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='uitk-layout-flex-item uitk-layout-flex-item-flex-grow-1 uitk-step-input-label-section' tag='LABEL' aaname='' check:innerText='Children&amp;#xD;&amp;#xA;Ages 2 to 17' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[lolo]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(lolo,"\d").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[lolo]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" ContentHash="lUj2FcRCm0icZhHVzt9buQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGsSURBVDhPpZPNLgNRHMU9QSMhGl87tIhK7kyqM7NBqI+FsGms2HkBL1BrXoEHsPWVSBASy6JE4nvBgoikFUKQzvE/V6etpJ1ILE5m7v3f85tz7/1PVe5SBURzokcR/iiupSdAAF/eRbqIa3+5VwUIPUkCHjjhij7PFc63DBytm0iXEedv9w0PQN0T4HLweaawOB9FV8RGS8hBa7iotnYb4Q5bP0fiFu4Egp8kOQJ0tNSKicSEhaEBC8ODRY0OWYh02wg2Owg2OQgJ5HjD1B5+XAOot1OF7JGB57Qq6PVEYW/ZhG3ZqGsUgEDCnRUAFA/IE24UDtdM9PdaqG1wNKRLkoRkKxUBnlg8WDXRJ+aaekdDdiUJ988z8QXw66VmPpnkRbbDM/EF0PwhtzE9GUN13Y+ZMG4nK2fiC/iSHsgcGnhKGUjO9miINstCgn0BHFzuGBgbtTAzFdMQJqGRdQ8QlyvmlV5sSx+UAFwOTjdNKMPWECbxzB4gI1ecGLewtBDVafM13Ui6ldkHhDBJyYKCWGez6WTFed3KhZ+JSfLRysr9XaNnjoB//M4q8A3mjqnICHwMtAAAAABJRU5ErkJggg==" InformativeScreenshot="bc694460017b9b10051618cd378e7c50.jpg" Reference="zvDLkfmKnkW6khp1sq9DTg/k16VpTi6LUWQKoEY786nPg" Selector="&lt;html app='msedge.exe' title='Cheap Flights, Plane Tickets &amp;amp; Airline Deals - Expedia' /&gt;" Title="Cheap Flights, Plane Tickets &amp; Airline Deals - Expedia" Url="https://www.expedia.com/Flights" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

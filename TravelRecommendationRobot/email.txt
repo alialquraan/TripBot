@@ -1,0 +1,42 @@
+Travel Recommendation
+Hello traveler!
+
+We have some exciting recommendations for your upcoming trip. Here's what you need to know:
+
+Flight Information
+You'll be flying from {0}to {1}.
+
+Flight ticket price: {2}
+Weather Conditions
+The weather in {1} during your travel dates is as follows:
+
+   -The Weather Condition is : {3}
+   -The Temperature is : {4}
+Clothes to Take
+Based on the weather conditions, here are some suggested clothing items:
+
+ 
+
+      
+{5}
+
+
+Stay Information
+You'll be staying at {6} in {1}.
+
+Activities to Enjoy
+While you're in {1}, consider the following activities:
+
+ 
+
+        
+{7}
+
+
+ 
+
+Have a fantastic trip!
+
+Best regards,
+
+Your Travel Advisor
